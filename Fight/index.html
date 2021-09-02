@@ -24,7 +24,7 @@
             <div id="fight-div">
                 <h3>Bob</h3>
                 <div class="img-div">
-                    <img src="http://www.placekitten.com/200/200" alt="a kitty cat">
+                    <img id="enemy-img" src="http://www.placekitten.com/200/200" alt="a kitty cat">
                 </div>
                 <h4>Bob says your shirt makes you look fat. How do you respond?</h4>
                 <div id="options-div">
@@ -32,19 +32,28 @@
                         <div class="radio-div">
                             <label id="label-1">
                                 <input type="radio" name="option-radio" value="0">
-                                asdfasdfasdfasdfasd asdfasdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf
+                                <span id="option-1-text">
+                                    asdfasdfasdfasdfasd asdfasdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf
+                                </span>
                             </label>
-                            <label id="label-1">
-                                <input type="radio" name="option-radio" value="0">
-                                asdf
+                            <label id="label-2">
+                                <input id="radio1" type="radio" name="option-radio" value="1">
+                                <span id="option-2-text">
+                                    asdf
+                                </span>
                             </label>
-                            <label id="label-1">
-                                <input type="radio" name="option-radio" value="0">
-                                asdf
+                            <label id="label-3">
+                                <input type="radio" name="option-radio" value="2">
+                                <span id="option-3-text">
+                                    asdf
+                                </span>
                             </label>
                         </div>
                         <input type="submit" value="Choose">
                     </form>
+                    <div id="results-div">
+
+                    </div>
                 </div>
         </section>
     </main>
