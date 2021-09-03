@@ -6,25 +6,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/reset.css">
-    <link rel="stylesheet" href="./styles/style.css">
-    <link rel="stylesheet" href="./styles/fight.css">
-    <title>Dojo</title>
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="./fight.css">
+    <title>Enemy Encounter</title>
 </head>
 
 <body>
     <header>
-        <div class="gutter-right logo">
-            <img src="assets/big-logo.png" />
-        </div>
+        <h1>Mortal Kombat</h1>
     </header>
     <main>
         <section class="main-section">
-            <img class="main-logo" src="./assets/alchemy-logo.png" />
             <h2>
-                Pick your fighter
+                You Encounter a Foe.
             </h2>
+            <div id="fight-div">
+                <h3>Bob</h3>
+                <div class="img-div">
+                    <img id="enemy-img" src="http://www.placekitten.com/200/200" alt="a kitty cat">
+                </div>
+                <h4>Bob says your shirt makes you look fat. How do you respond?</h4>
+                <div id="options-div">
+                    <form id="options-form">
+                        <div class="radio-div">
+                            <label id="label-1">
+                                <input type="radio" name="option-radio" value="0">
+                                <span id="option-1-text">
+                                    asdfasdfasdfasdfasd asdfasdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf
+                                </span>
+                            </label>
+                            <label id="label-2">
+                                <input id="radio1" type="radio" name="option-radio" value="1">
+                                <span id="option-2-text">
+                                    asdf
+                                </span>
+                            </label>
+                            <label id="label-3">
+                                <input type="radio" name="option-radio" value="2">
+                                <span id="option-3-text">
+                                    asdf
+                                </span>
+                            </label>
+                        </div>
+                        <input type="submit" value="Choose">
+                    </form>
+                    <div id="results-div">
 
+                    </div>
+                </div>
         </section>
     </main>
     <footer>
