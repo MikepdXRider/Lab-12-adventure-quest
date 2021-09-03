@@ -24,7 +24,7 @@ const enemyImg = document.querySelector('#enemy-img');
 const optionsDiv = document.querySelector('#options-div');
 const resultsDiv = document.querySelector('#results-div');
 const returnLink = document.querySelector('#return-link');
-const userStatsDiv = document.querySelector('#user-stats-div');
+const userStatsDiv = document.querySelector('#stats-container');
 
 //Grab form elements
 const form = document.querySelector('#options-form');
