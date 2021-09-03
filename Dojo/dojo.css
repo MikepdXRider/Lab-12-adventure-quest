@@ -1,7 +1,32 @@
 
+body {
+    background-image: linear-gradient(var(--color4), var(--color1));
 
-#background {
+        /* https://coolors.co/generate and click export -> scss to get the colors to copy and paste below*/
+        --color1: rgb(245,54,36);
+        --color2: rgb(0, 0, 0);
+        --color3: rgb(49, 49, 49);
+        --color4: rgb(239,214,9);
+        --color5: rgb(0, 0, 0);
+        --color6: rgb(0, 0, 0);
+        /* --color1: hsla(45, 86%, 83%, 1);
+        --color2: hsla(135, 65%, 98%, 1);
+        --color3: hsla(315, 37%, 86%, 1);
+        --color4: hsla(45, 73%, 98%, 1);
+        --color5: hsla(224, 40%, 79%, 1); */
+        
+        --header-height: 80px;
+        --shadow: 0px 10px 20px -12px rgba(0,0,0,0.45);
+        --gutter: 30px;
+        --footer-height: 25px;
+        
+        font-family: 'Titillium Web', sans-serif;
+        background-color: var(--color2);
+        color: var(--color6);
+    
 }
+
+
 
 
 #enemies {
@@ -14,4 +39,30 @@ span, a {
     color: red;
     font-size: 20px;
     font-weight: 900; 
+}
+
+header {
+    color: -webkit-linear-gradient(var(--color4), var(--color1));
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: var(--color3);
+    height: var(--header-height);
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+#userprofile {
+    display:flex;
+    flex-direction: row;
+    justify-content:flex-end;
+    text-align:right;
+    background: -webkit-linear-gradient(var(--color4), var(--color1));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+   
+}
+
+header img {
+    height: var(--header-height);
+    margin: 0px auto;
 }
