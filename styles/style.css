@@ -80,10 +80,8 @@ section {
 }
 
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items:flex-end;
-    align-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     background-color: var(--color3);
     height: var(--header-height);
     box-shadow: var(--shadow);
@@ -95,7 +93,6 @@ footer {
     background-color: var(--color3);
     box-shadow: var(--shadow);
 }
-
 
 h2 {
     font-size: 1.8rem;
@@ -112,6 +109,7 @@ h2 {
 
 header img {
     height: var(--header-height);
+    margin: 0px auto;
 }
 
 p {
@@ -128,10 +126,16 @@ footer {
     background-color: var(--color3);
     box-shadow: var(--shadow);
 }
+
+#stats-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
   
-  @keyframes pulse {
+@keyframes pulse {
     20% {
-      transform: rotate3d(-10, -10, -10, 50deg) scale(1.2);
+        transform: rotate3d(-10, -10, -10, 50deg) scale(1.2);
     }
 
     40% {
@@ -140,10 +144,9 @@ footer {
 
     60% {
         transform: rotate3d(-10, 10, 10, 50deg) scale(1.2);
-      }
+        }
 
     80% {
         transform: rotate3d(10, 10, 10, 50deg) scale(1);
     }
-
-  }
+}
