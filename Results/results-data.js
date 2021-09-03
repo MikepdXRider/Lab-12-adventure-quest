@@ -1,3 +1,1 @@
-export const results = [
-    
-]
+export const results = [];

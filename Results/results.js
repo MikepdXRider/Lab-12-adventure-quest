@@ -84,7 +84,7 @@ export function handleEncounterResults(){
     }
 
     if (numberOfEncounters === 3) {
-        return `You fought ${encounteredEnemyObjAcc[0].enemyName}, ${encounteredEnemyObjAcc[1].enemyName}, and ${encounteredEnemyObjAcc[0].enemyName}`;
+        return `You fought ${encounteredEnemyObjAcc[0].enemyName}, ${encounteredEnemyObjAcc[1].enemyName}, and ${encounteredEnemyObjAcc[2].enemyName}`;
     }
 
 
