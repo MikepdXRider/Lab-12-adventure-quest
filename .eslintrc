@@ -17,6 +17,8 @@
     "QUnit": false
   },
   "rules": {
+    "prefer-const": "warn",
+    "eol-last":"warn",
     "eqeqeq": ["error", "always"],
     "no-console": "warn",
     "indent": [
