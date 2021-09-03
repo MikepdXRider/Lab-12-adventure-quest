@@ -25,6 +25,7 @@ for (let enemy of fightData) { //eslint-disable-line
         const linkDisplay = renderQuestLink(enemy);
         enemiesDiv.append(linkDisplay); 
         linkDisplay.addEventListener('click', () => {
+            window.location = '../Fight/?id=' + enemy.id;
             user.encounteredEnemyIds.push(enemy.id);
             setLocalStorage(user);
         });
