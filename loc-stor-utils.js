@@ -24,6 +24,7 @@ export function createUserObj(form){
     const userDataObj = {
         name: form.get('user-name'),
         class: form.get('user-fighter'),
+        // Update to include user-selected image.
         hp: 10,
         fame: 10,
         encounteredEnemyIds:[]
