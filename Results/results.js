@@ -76,14 +76,16 @@ export function handleEncounterResults(){
     });
 
     if (numberOfEncounters === 1) {
-        return `You fought ${encounteredEnemyObjAcc[0].enemyName}`;
+        return `You fought ${encounteredEnemyObjAcc[0].enemyName}.`;
     }
 
     if (numberOfEncounters === 2) {
-        return `You fought ${encounteredEnemyObjAcc[0].enemyName} and ${encounteredEnemyObjAcc[1].enemyName}`;
+        return `You fought ${encounteredEnemyObjAcc[0].enemyName} and ${encounteredEnemyObjAcc[1].enemyName}.`;
     }
 
     if (numberOfEncounters === 3) {
-        return `You fought ${encounteredEnemyObjAcc[0].enemyName}, ${encounteredEnemyObjAcc[1].enemyName}, and ${encounteredEnemyObjAcc[2].enemyName}`;
+        return `You fought ${encounteredEnemyObjAcc[0].enemyName}, ${encounteredEnemyObjAcc[1].enemyName}, and ${encounteredEnemyObjAcc[2].enemyName}.`;
     }
 }
+
+
