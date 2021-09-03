@@ -6,7 +6,7 @@ import { renderCompletedQuest, renderQuestLink, renderUserStats } from './dojo-u
 
 const user = getLocalStorage();
 const enemiesDiv = document.getElementById('enemies');
-// const userStatsDiv = document.createElement('div');
+
 const userProfile = document.getElementById('userprofile');
 userProfile.append(renderUserStats(user));
 
@@ -17,7 +17,7 @@ if (user.hp < 1 || user.encounteredEnemyIds.length === 3) {
 
 for (let enemy of fightData) { //eslint-disable-line
     if (user.encounteredEnemyIds.includes(enemy.id)) {
-        user.encounteredEnemyIds.push(enemy.id);
+
         const spanDisplay = renderCompletedQuest(enemy);
         enemiesDiv.append(spanDisplay);
     }
