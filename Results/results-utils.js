@@ -63,7 +63,6 @@ export function handleHealthandFameResults(){
 
 
 export function handleEncounterResults(){
-    // const userData = getLocalStorage();
 
     const encounters = userData.encounteredEnemyIds;
     const numberOfEncounters = encounters.length;
@@ -78,20 +77,20 @@ export function handleEncounterResults(){
     });
 
     if (numberOfEncounters === 1) {
-        return `You fought ${encounteredEnemyObjAcc[0].enemyName}.`;
+        return `You encountered ${encounteredEnemyObjAcc[0].enemyName}.`;
     }
 
     if (numberOfEncounters === 2) {
-        return `You fought ${encounteredEnemyObjAcc[0].enemyName} and ${encounteredEnemyObjAcc[1].enemyName}.`;
+        return `You encountered ${encounteredEnemyObjAcc[0].enemyName} and ${encounteredEnemyObjAcc[1].enemyName}.`;
     }
 
     if (numberOfEncounters === 3) {
-        return `You fought ${encounteredEnemyObjAcc[0].enemyName}, ${encounteredEnemyObjAcc[1].enemyName}, and ${encounteredEnemyObjAcc[2].enemyName}.`;
+        return `You encountered ${encounteredEnemyObjAcc[0].enemyName}, ${encounteredEnemyObjAcc[1].enemyName}, and ${encounteredEnemyObjAcc[2].enemyName}.`;
     }
 }
 
+
 export function findUserFighterImg(){
-    // const userData = getLocalStorage();
     const userFighterClass = userData.class;
 
     const userFighter = userFighterData.find(item => {
@@ -99,10 +98,10 @@ export function findUserFighterImg(){
             return item;
         }
     });
-    console.log(userFighter);
-    console.log(userFighter.img);
+
     return userFighter.img;
 }
+
 
 export function renderResultsPage(elDOM){
     const elImg = document.createElement('img');
