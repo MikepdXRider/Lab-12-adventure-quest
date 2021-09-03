@@ -76,28 +76,33 @@ let wins = 0;
 let losses = 0;
 let selectedResponse; //the response the user selected.
 
-//This function calls itself recursively. It will stop
-//when wins or losses reaches 3
-const playRockPaperScissors = (selectedObject) => {
-    //Randomly assign picks to user and enemy
-    const userPlay = selectedObject;
-    const enemyPlay = rps[(Math.floor(Math.random() * 3))];
-
-    //Determine result of round
-    let results = '';
+function determineRPSResult(userPlay, enemyPlay) {
+    let result = '';
     if (userPlay === enemyPlay) {
-        results = 'It was a draw';
+        result = 'It was a draw';
     } else if (
         (userPlay === 'Rock' && enemyPlay === 'Scissors') ||
         (userPlay === 'Paper' && enemyPlay === 'Rock') ||
         (userPlay === 'Scissors' && enemyPlay === 'Paper')
     ) {
-        results = 'You won this round';
+        result = 'You won this round';
         wins++;
     } else {
-        results = 'You lost this round';
+        result = 'You lost this round';
         losses++;
     }
+    return result;
+} 
+
+//This function calls itself recursively. It will stop
+//when wins or losses reaches 3
+const playRockPaperScissorsRound = (selectedObject) => {
+    //Randomly assign picks to user and enemy
+    const userPlay = selectedObject;
+    const enemyPlay = rps[(Math.floor(Math.random() * 3))];
+
+    //Determine result of round
+    const result = determineRPSResult(userPlay, enemyPlay);
 
     //Handle the result of the round
     if (wins === 3) {
@@ -110,7 +115,7 @@ const playRockPaperScissors = (selectedObject) => {
         handleFightCompletion(resultText, selectedResponse.hpEffect, selectedResponse.fameEffect);
     } else {
         //No result yet, play another round
-        resultsDiv.textContent = `You played ${userPlay} and ${fight.enemyName} played ${enemyPlay}. ${results}. Wins: ${wins}, Losses: ${losses}`;
+        resultsDiv.textContent = `You played ${userPlay} and ${fight.enemyName} played ${enemyPlay}. ${result}. Wins: ${wins}, Losses: ${losses}`;
     }
 };
 
@@ -147,5 +152,6 @@ rpsForm.addEventListener('submit', e => {
     //Get the data for the user selected rps object.
     const formData = new FormData(rpsForm);
     const selectedObject = formData.get('rps-radio');
-    playRockPaperScissors(selectedObject);
+    //Update the rps game
+    playRockPaperScissorsRound(selectedObject);
 });
