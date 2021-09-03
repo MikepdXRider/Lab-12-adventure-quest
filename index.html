@@ -13,32 +13,33 @@
 </head>
 
 <body>
-    <header>
-        <h1>Mortal Kombat</h1>
+    <header class="header">
+        <img src="../assets/Mortalkombat2011logo.png" alt="Mortal Kombat Logo">
     </header>
     <main>
-        <form id='create-fighter' name='create-fighter'>
-            <label for="">
-                Name:
-                <input type="text" name='user-name'>
-            </label>
-            <p>Select your fighter!</p>
-            <div>
-                <label name='user-fighter'>
-                    <img src="http://placekitten.com/g/100/150" alt="">
-                    <input type="radio" value="fighter-1" name='user-fighter'>
+        <section class="main-section">
+            <form id='create-fighter' name='create-fighter'>
+                <label for="">
+                    Name:
+                    <input type="text" name='user-name'>
                 </label>
-                <label name='user-fighter'>
-                    <img src="http://placekitten.com/g/100/150" alt="">
-                    <input type="radio" value="fighter-2" name='user-fighter'>
-                </label>
-                <label name='user-fighter'>
-                    <img src="http://placekitten.com/g/100/150" alt="">
-                    <input type="radio" value="fight-3" name='user-fighter'>
-                </label>
-            </div>
-            <button id="select-fighter-button">Enter The Dojo!</button>
-        </form>
+                <p>Select your fighter!</p>
+                <div class="user-fighter">
+                    <label name='user-fighter'>
+                        <img src="http://placekitten.com/g/100/150" alt="">
+                        <input type="radio" value="fighter-1" name='user-fighter'>
+                    </label>
+                    <label name='user-fighter'>
+                        <img src="http://placekitten.com/g/100/150" alt="">
+                        <input type="radio" value="fighter-2" name='user-fighter'>
+                    </label>
+                    <label name='user-fighter'>
+                        <img src="http://placekitten.com/g/100/150" alt="">
+                        <input type="radio" value="fight-3" name='user-fighter'>
+                    </label>
+                </div>
+                <button id="select-fighter-button">Enter The Dojo!</button>
+            </form>
         </section>
     </main>
     <footer>
