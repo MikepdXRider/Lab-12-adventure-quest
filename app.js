@@ -16,5 +16,6 @@ elForm.addEventListener('submit', (e) => {
 
     setLocalStorage(newUserObj);
 
-    window.location = './dojo/';
+    window.location = './Dojo/';
 });
+
