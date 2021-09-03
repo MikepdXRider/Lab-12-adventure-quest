@@ -28,6 +28,7 @@ const option1Text = document.querySelector('#option-1-text');
 const option2Text = document.querySelector('#option-2-text');
 const option3Text = document.querySelector('#option-3-text');
 
+//render fight data
 enemyNameEl.textContent = fight.enemyName;
 promptEl.textContent = fight.prompt;
 enemyImg.src = fight.image;
