@@ -1,3 +1,5 @@
+
+
 export function renderQuestLink(enemy) {
     const link = document.createElement('a');
     link.classList.add = ('quest');
@@ -15,9 +17,27 @@ export function renderCompletedQuest(enemy) {
     spanEl.classList.add = ('quest');
     spanEl.textContent = `You have completed the ${enemy.enemyName} quest!`;
     
-
     const image = document.createElement('img');
     image.src = enemy.image;
     spanEl.append(image);
     return spanEl;  
+}
+
+export function renderUserStats(userStats) {
+    const containerDiv = document.createElement('div');
+    const nameDiv = document.createElement('div');
+    const classDiv = document.createElement('div');
+    const hpDiv = document.createElement('div');
+    const fameDiv = document.createElement('div');
+    const encounteredDiv = document.createElement('div');
+
+    nameDiv.textContent = `Name: ${userStats.name}`;
+    classDiv.textContent = `Class: ${userStats.class}`;
+    hpDiv.textContent = `Hp: ${userStats.hp}`;
+    fameDiv.textContent = `Fame: ${userStats.hp}`;
+    encounteredDiv.textContent = `Encountered: ${userStats.encounteredEnemyIds}`;
+    containerDiv.textContent = "User Stats";
+
+    containerDiv.append(nameDiv, classDiv, hpDiv, fameDiv, encounteredDiv);
+    return containerDiv;
 }
