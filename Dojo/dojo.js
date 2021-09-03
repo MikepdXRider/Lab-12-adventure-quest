@@ -15,8 +15,9 @@ if (user.hp < 1 || user.encounteredEnemyIds.length === 3) {
     window.location = '../Results/index.html';
 }
 
-for (const enemy of fightData) {
+for (let enemy of fightData) { //eslint-disable-line
     if (user.encounteredEnemyIds.includes(enemy.id)) {
+
         const spanDisplay = renderCompletedQuest(enemy);
         enemiesDiv.append(spanDisplay);
     }
