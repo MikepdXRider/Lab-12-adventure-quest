@@ -25,6 +25,7 @@ export function renderCompletedQuest(enemy) {
 
 export function renderUserStats(userStats) {
     const containerDiv = document.createElement('div');
+    containerDiv.className = 'stats-div';
     const nameDiv = document.createElement('div');
     const classDiv = document.createElement('div');
     const hpDiv = document.createElement('div');
@@ -36,7 +37,6 @@ export function renderUserStats(userStats) {
     hpDiv.textContent = `Hp: ${userStats.hp}`;
     fameDiv.textContent = `Fame: ${userStats.hp}`;
     encounteredDiv.textContent = `Encountered: ${userStats.encounteredEnemyIds}`;
-    containerDiv.textContent = "User Stats";
 
     containerDiv.append(nameDiv, classDiv, hpDiv, fameDiv, encounteredDiv);
     return containerDiv;

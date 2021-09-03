@@ -1,8 +1,8 @@
 export const fightData = [
     {
         id: 1,
-        image: 'http://www.placekitten.com/200/200',
-        enemyName: 'bob',
+        image: '../assets/raiden.gif',
+        enemyName: 'Raiden',
         prompt: 'Bob says your shirt makes you look fat. How do you respond?',
         options: [
             {
@@ -30,8 +30,8 @@ export const fightData = [
     },
     {
         id: 2,
-        image: 'http://www.placekitten.com/200/200',
-        enemyName: 'bob2',
+        image: '../assets/sub-zero.gif',
+        enemyName: 'Sub Zero',
         prompt: 'Bob says your shirt makes you look fat. How do you respond?',
         options: [
             {
@@ -59,8 +59,8 @@ export const fightData = [
     },
     {
         id: 3,
-        image: 'http://www.placekitten.com/200/200',
-        enemyName: 'bob3',
+        image: '../assets/johnny-cage.gif',
+        enemyName: 'Johnny Cage',
         prompt: 'Bob says your shirt makes you look fat. How do you respond?',
         options: [
             {
