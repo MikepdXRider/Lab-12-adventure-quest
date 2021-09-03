@@ -1,12 +1,12 @@
 
 body {
     /* https://coolors.co/generate and click export -> scss to get the colors to copy and paste below*/
-    /* --color1: hsla(349, 69%, 76%, 1);
-    --color2: hsla(207, 67%, 44%, 1);
-    --color3: hsla(200, 61%, 56%, 1);
-    --color4: hsla(187, 41%, 94%, 1);
-    --color5: hsla(170, 28%, 95%, 1); */
-
+    --color1: rgb(245,54,36);
+    --color2: rgb(0, 0, 0);
+    --color3: rgb(49, 49, 49);
+    --color4: rgb(239,214,9);
+    --color5: rgb(0, 0, 0);
+    --color6: rgb(0, 0, 0);
     /* --color1: hsla(45, 86%, 83%, 1);
     --color2: hsla(135, 65%, 98%, 1);
     --color3: hsla(315, 37%, 86%, 1);
@@ -20,6 +20,37 @@ body {
     
     font-family: 'Titillium Web', sans-serif;
     background-color: var(--color2);
+    color: var(--color6);
+}
+
+button, input[type="submit"] {
+    background-image: linear-gradient(var(--color4), var(--color1));
+}
+
+body {
+    background-image: linear-gradient(var(--color4), var(--color1));
+}
+
+.main-section {
+    background-image: linear-gradient(rgba(255, 255, 255, .5), rgba(255, 255, 255, .7), rgba(255, 255, 255, .7), rgba(255, 255, 255, .5));
+}
+
+.empty-div {
+    width: 100px;
+    height: 10px;
+}
+
+.stats-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    background: -webkit-linear-gradient(var(--color4), var(--color1));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.stats-div > div {
+    margin: 5px;
 }
 
 main {
@@ -28,6 +59,9 @@ main {
     justify-content: center;
     align-items: center;
     margin-bottom: calc(var(--footer-height));
+    /*
+    background-image: linear-gradient(var(--color4), var(--color1));
+    */
 }
 
 section {
@@ -47,7 +81,9 @@ section {
 
 header {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    align-items:flex-end;
+    align-content: space-between;
     background-color: var(--color3);
     height: var(--header-height);
     box-shadow: var(--shadow);

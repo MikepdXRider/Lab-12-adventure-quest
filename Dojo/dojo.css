@@ -1,27 +1,18 @@
 
 
-body {
- 
-    
-}
-
 #background {
     background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/aa907cd2-e6b3-4cac-94d2-c626d16ed367/d4su7zp-0df43ae2-1ae7-4fb1-96c4-281fcaf8c138.jpg/v1/fill/w_1165,h_686,q_70,strp/the_dojo_by_danilologanlucci_d4su7zp-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9OTQzIiwicGF0aCI6IlwvZlwvYWE5MDdjZDItZTZiMy00Y2FjLTk0ZDItYzYyNmQxNmVkMzY3XC9kNHN1N3pwLTBkZjQzYWUyLTFhZTctNGZiMS05NmM0LTI4MWZjYWY4YzEzOC5qcGciLCJ3aWR0aCI6Ijw9MTYwMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.nzOZg3b1LnQ8518Nt1BiO5SllPipH20dtK4sM2_p83E');
 }
 
 
 #enemies {
-    height: 600px;
-    display: grid;
-    
+    height: 620px;
+    display: grid;   
 }
 
 
 span, a {
     color: red;
-    font-size: 35px;
-    font-weight: 300; 
- 
-    
-
+    font-size: 33px;
+    font-weight: 900; 
 }
