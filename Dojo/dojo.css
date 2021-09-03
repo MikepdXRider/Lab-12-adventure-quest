@@ -1,6 +1,6 @@
 
 body {
-    background-image: linear-gradient(var(--color4), var(--color1));
+ 
 
         /* https://coolors.co/generate and click export -> scss to get the colors to copy and paste below*/
         --color1: rgb(245,54,36);
@@ -26,19 +26,19 @@ body {
     
 }
 
-
-
-
-#enemies {
-    height: 200px;
-    display: flex;   
+body {
+    background-image: linear-gradient(var(--color4), var(--color1));
 }
 
 
-span, a {
-    color: red;
-    font-size: 20px;
-    font-weight: 900; 
+#enemies {
+ 
+}
+
+
+span, button {
+    background: transparent;
+    border: none;
 }
 
 header {
@@ -46,9 +46,10 @@ header {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     background-color: var(--color3);
-    height: var(--header-height);
+    height: 120px;
     flex-direction: row;
     justify-content: flex-end;
+    width: 100%;
 }
 
 #userprofile {
@@ -63,6 +64,9 @@ header {
 }
 
 header img {
-    height: var(--header-height);
+    height: 110px;
     margin: 0px auto;
+}
+.stats-div {
+ padding-right: 5px;   
 }
