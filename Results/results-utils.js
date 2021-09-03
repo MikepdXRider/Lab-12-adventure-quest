@@ -1,9 +1,10 @@
 import { getLocalStorage } from '../loc-stor-utils.js';
 import { fightData } from '../fightsData.js';
+import { userFighterData } from './user-fighters-data.js';
 
+const userData = getLocalStorage();
 
 export function handleHealthandFameResults(){
-    const userData = getLocalStorage();
     const finalHealth = userData.hp;
     const finalFame = userData.fame;
 
@@ -62,7 +63,7 @@ export function handleHealthandFameResults(){
 
 
 export function handleEncounterResults(){
-    const userData = getLocalStorage();
+    // const userData = getLocalStorage();
 
     const encounters = userData.encounteredEnemyIds;
     const numberOfEncounters = encounters.length;
@@ -89,17 +90,35 @@ export function handleEncounterResults(){
     }
 }
 
+export function findUserFighterImg(){
+    // const userData = getLocalStorage();
+    const userFighterClass = userData.class;
+
+    const userFighter = userFighterData.find(item => {
+        if (item.name === userFighterClass){
+            return item;
+        }
+    });
+    console.log(userFighter);
+    console.log(userFighter.img);
+    return userFighter.img;
+}
+
 export function renderResultsPage(elDOM){
-    // const elImg = document.createElement('img');
+    const elImg = document.createElement('img');
     const elH3 = document.createElement('h3');
     const elButton = document.createElement('button');
 
-    // const userData = getLocalStorage();
     const resultsText = `${handleEncounterResults()} ${handleHealthandFameResults()}`;
 
-    // elImg.src = userData.img;
+    elImg.src = findUserFighterImg();
     elH3.textContent = resultsText;
     elButton.textContent = 'Make a new character';
 
-    elDOM.append(/*elImg,*/ elH3, elButton);
+    elButton.addEventListener('click', () => {
+        window.location = '../index.html';
+    });
+
+    elDOM.append(elImg, elH3, elButton);
 }
+
