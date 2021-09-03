@@ -1,4 +1,6 @@
+import { renderUserStats } from '../Dojo/dojo-utils.js';
 import { fightData } from '../fightsData.js';
+import { getLocalStorage } from '../loc-stor-utils.js';
 import { handleStatEffect } from './handle-stat-effect.js';
 
 //get the fight data
@@ -22,6 +24,7 @@ const enemyImg = document.querySelector('#enemy-img');
 const optionsDiv = document.querySelector('#options-div');
 const resultsDiv = document.querySelector('#results-div');
 const returnLink = document.querySelector('#return-link');
+const userStatsDiv = document.querySelector('#user-stats-div');
 //grab form elements
 const form = document.querySelector('#options-form');
 const option1Text = document.querySelector('#option-1-text');
@@ -39,6 +42,17 @@ option3Text.textContent = fight.options[2].text;
 function showReturnLink() {
     returnLink.className = '';
 }
+
+function updateUserStatsDisplay() {
+    const children = userStatsDiv.childNodes;
+    for (const child of children) {
+        userStatsDiv.removeChild(child);
+    }
+    userStatsDiv.appendChild(renderUserStats(getLocalStorage()));
+}
+
+//display stats before fight
+updateUserStatsDisplay();
 
 //lazy rps game
 const rps = ['Rock', 'Paper', 'Scissors'];
@@ -66,10 +80,12 @@ const playRoundOfRPS = (selectedOption) => {
         resultsDiv.textContent = `You beat ${fight.enemyName}! You gained ${selectedOption.hpEffect} hp and ${selectedOption.fameEffect} fame.`;
         showReturnLink();
         handleStatEffect(selectedOption.hpEffect, selectedOption.fameEffect);
+        updateUserStatsDisplay();
     } else if (losses === 3) {
         resultsDiv.textContent = `You lost to ${fight.enemyName}! You lost ${selectedOption.hpEffect} hp and ${selectedOption.fameEffect} fame.`;
         showReturnLink();
         handleStatEffect((-1 * selectedOption.hpEffect), (-1 * selectedOption.fameEffect));
+        updateUserStatsDisplay();
     } else {
         resultsDiv.textContent = `You played ${userPlay} and ${fight.enemyName} played ${enemyPlay}. ${results}. Wins: ${wins}, Losses: ${losses}`;
         setTimeout(() => { playRoundOfRPS(selectedOption); }, 1500);
@@ -91,8 +107,9 @@ form.addEventListener('submit', e => {
     if (selectedOption.startsFight) {
         playRockPaperScissors(selectedOption);
     } else {
-        resultsDiv.textContent = `hp += ${selectedOption.hpEffect}, fame += ${selectedOption.fameEffect}`;
+        resultsDiv.textContent = `Effect on hp: ${selectedOption.hpEffect}, Effect on fame: ${selectedOption.fameEffect}`;
         handleStatEffect(selectedOption.hpEffect, selectedOption.fameEffect);
+        updateUserStatsDisplay();
         showReturnLink();
     }
 });

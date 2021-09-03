@@ -1,7 +1,3 @@
-header {
-    justify-content: center;
-}
-
 #fight-div {
     display: flex;
     flex-direction: column;
