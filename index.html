@@ -8,23 +8,37 @@
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/style.css">
-    <link rel="stylesheet" href="./styles/home.css">
+    <link rel="stylesheet" href="./home.css">
     <title>Document</title>
 </head>
 
 <body>
     <header>
-        <div class="gutter-right logo">
-            <img src="assets/big-logo.png" />
-        </div>
+        <h1>Mortal Kombat</h1>
     </header>
     <main>
-        <section class="main-section">
-            <img class="main-logo" src="./assets/alchemy-logo.png" />
-            <h2>
-                Pick your character
-            </h2>
-
+        <form id='create-fighter' name='create-fighter'>
+            <label for="">
+                Name:
+                <input type="text" name='user-name'>
+            </label>
+            <p>Select your fighter!</p>
+            <div>
+                <label name='user-fighter'>
+                    <img src="http://placekitten.com/g/100/150" alt="">
+                    <input type="radio" value="fighter-1" name='user-fighter'>
+                </label>
+                <label name='user-fighter'>
+                    <img src="http://placekitten.com/g/100/150" alt="">
+                    <input type="radio" value="fighter-2" name='user-fighter'>
+                </label>
+                <label name='user-fighter'>
+                    <img src="http://placekitten.com/g/100/150" alt="">
+                    <input type="radio" value="fight-3" name='user-fighter'>
+                </label>
+            </div>
+            <button id="select-fighter-button">Enter The Dojo!</button>
+        </form>
         </section>
     </main>
     <footer>

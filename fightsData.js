@@ -14,8 +14,8 @@ export const fightData = [
             },
             {
                 text: 'Ah man, yeah I\'ve been gaining some weight lately.',
-                hpEffect: 0,
-                fameEffect: 10,
+                hpEffect: -1,
+                fameEffect: -5,
                 startsFight: false,
                 resultText: 'Bob laughs at you and smacks your belly, you lose 5 fame'
             },
