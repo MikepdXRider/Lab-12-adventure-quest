@@ -4,7 +4,7 @@ export function renderQuestLink(enemy) {
     const link = document.createElement('a');
     link.classList.add = ('quest');
     link.href = '../Fight/?id=' + enemy.id; 
-    link.textContent = `The ${enemy.enemyName} quest!`;
+    link.textContent = `Enter the ${enemy.enemyName} quest!`;
     
     const image = document.createElement('img');
     image.src = enemy.image;
@@ -15,7 +15,7 @@ export function renderQuestLink(enemy) {
 export function renderCompletedQuest(enemy) {
     const spanEl = document.createElement('span');
     spanEl.classList.add = ('quest');
-    spanEl.textContent = `You have completed the ${enemy.enemyName} quest!`;
+    spanEl.textContent = `${enemy.enemyName} quest completed.`;
     
     const image = document.createElement('img');
     image.src = enemy.image;
