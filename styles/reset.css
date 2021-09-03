@@ -9,7 +9,11 @@
 }
 
 html, body {
-    height: 100%;
+    /*
+	 * this was causing the background gradient to not reach the bottom
+	 * of the page. -Dylan
+	height: 100%;
+	*/
     width: 100%;
 }
 
