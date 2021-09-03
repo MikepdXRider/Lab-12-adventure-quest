@@ -29,12 +29,55 @@ option1Text.textContent = fight.options[0].text;
 option2Text.textContent = fight.options[1].text;
 option3Text.textContent = fight.options[2].text;
 
+//lazy rps game
+const rps = ['Rock', 'Paper', 'Scissors'];
+let wins = 0;
+let losses = 0;
+
+const playRoundOfRPS = (selectedOption) => {
+    const userPlay = rps[(Math.floor(Math.random() * 3))];
+    const enemyPlay = rps[(Math.floor(Math.random() * 3))];
+    let results = '';
+    if (userPlay === enemyPlay) {
+        results = 'It was a draw';
+    } else if (
+        (userPlay === 'Rock' && enemyPlay === 'Scissors') ||
+        (userPlay === 'Paper' && enemyPlay === 'Rock') ||
+        (userPlay === 'Scissors' && enemyPlay === 'Paper')
+    ) {
+        results = 'You won this round';
+        wins++;
+    } else {
+        results = 'You lost this round';
+        losses++;
+    }
+    if (wins === 3) {
+        resultsDiv.textContent = `You beat ${fight.enemyName}!! You gained ${selectedOption.hpEffect} hp and ${selectedOption.fameEffect} fame.`;
+        //update user data
+    } else if (losses === 3) {
+        resultsDiv.textContent = `You lost to ${fight.enemyName}!! You lost ${selectedOption.hpEffect} hp and ${selectedOption.fameEffect} fame.`;
+        //update user data
+    } else {
+        resultsDiv.textContent = `You played ${userPlay} and ${fight.enemyName} played ${enemyPlay}. ${results}. Wins: ${wins}, Losses: ${losses}`;
+        setTimeout(() => { playRoundOfRPS(selectedOption); }, 1500);
+    }
+};
+
+function playRockPaperScissors(selectedOption) {
+    resultsDiv.textContent = `${fight.enemyName} challenges you to a game of rock, paper, scissors ... of death.`;
+    setTimeout(() => { playRoundOfRPS(selectedOption); }, 1500);
+}
+
 form.addEventListener('submit', e => {
     e.preventDefault();
     const formdata = new FormData(form);
     let selectedOptionIndex = formdata.get('option-radio');
-    console.log(selectedOptionIndex);
-    console.log(fight.options[selectedOptionIndex].resultText);
+    let selectedOption = fight.options[selectedOptionIndex];
     optionsDiv.removeChild(form);
     resultsDiv.textContent = fight.options[selectedOptionIndex].resultText;
+    if (selectedOption.startsFight) {
+        playRockPaperScissors(selectedOption);
+    } else {
+        resultsDiv.textContent = `hp += ${selectedOption.hpEffect}, fame += ${selectedOption.fameEffect}`;
+    }
 });
