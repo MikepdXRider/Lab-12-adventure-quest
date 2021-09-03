@@ -1,5 +1,5 @@
 
-import { createUserObj, getLocalStorage, setLocalStorage } from './loc-stor-utils.js';
+import { createUserObj, setLocalStorage } from './loc-stor-utils.js';
 
 
 const elForm = document.getElementById('create-fighter');
@@ -11,14 +11,10 @@ elForm.addEventListener('submit', (e) => {
 
     const form = new FormData(elForm);
     // console.log('Should return form value', form.get('user-fighter'));
-
+    
     const newUserObj = createUserObj(form);
 
-    const userData = getLocalStorage();
-
-    userData.push(newUserObj);
-
-    setLocalStorage(userData);
+    setLocalStorage(newUserObj);
 
     window.location = './dojo/';
 });
