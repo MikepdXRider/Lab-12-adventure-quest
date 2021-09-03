@@ -23,3 +23,21 @@
 .hidden {
     display: none;
 }
+
+input[type="radio"] + img {
+    box-sizing: border-box;
+    margin: 3px;
+    border: 2px white solid;
+    border-radius: 5px;
+    background-color: red;
+}
+.rps-label > input[type="radio"]:checked + img {
+    box-sizing: border-box;
+    border: 2px black solid;
+    border-radius: 5px;
+}
+
+.rps-label {
+    display: inline-block;
+    width: auto;
+}
