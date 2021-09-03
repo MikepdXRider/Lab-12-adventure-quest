@@ -63,13 +63,12 @@ export function handleHealthandFameResults(){
 
 export function handleEncounterResults(){
     const userData = getLocalStorage();
-    console.log('userData', userData);
+
     const encounters = userData.encounteredEnemyIds;
-    console.log('encountersArr', encounters);
+    const numberOfEncounters = encounters.length;
     
     const encounteredEnemyObjAcc = [];
-    const numberOfEncounters = encounters.length;
-    console.log('numberOfEncounters', numberOfEncounters);
+
     fightData.forEach(item => {
         const didUserEncounter = encounters.includes(item.id);
         if (didUserEncounter) {
