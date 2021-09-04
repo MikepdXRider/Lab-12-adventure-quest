@@ -35,15 +35,15 @@ export function handleHealthandFameResults(){
     }
 
     //mid finalHealth, low finalFame
-    if (finalHealth > 10 && finalHealth >= 20 && finalFame <= 10){
-        return 'You surive the dojo with a few bumps and bruises, but you won\'t be invited back.';
+    if (finalHealth > 10 && finalHealth <= 20 && finalFame <= 10){
+        return 'You surive the dojo with a few bumps and bruises, and you won\'t be invited back.';
     }
     //mid finalHealth, mid finalFame
-    if (finalHealth > 10 && finalHealth >= 20 && finalFame <= 20){
+    if (finalHealth > 10 && finalHealth <= 20 && finalFame <= 20){
         return 'You surive the dojo with a few bumps and bruises, but you fought well and leave with the respect of your opponents.';
     }
     //mid finalHealth, high finalFame
-    if (finalHealth > 10 && finalHealth >= 20 && finalFame > 20){
+    if (finalHealth > 10 && finalHealth <= 20 && finalFame > 20){
         return 'You surive the dojo with a few bumps and bruises, but you fought well and leave the people\'s champion. You can hear your name chanted throughout the region.';
     }
 
