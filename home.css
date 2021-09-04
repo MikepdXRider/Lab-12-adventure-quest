@@ -17,6 +17,9 @@ form{
     width: 70%;
 }
 
+p{
+    margin: 10px;
+}
 
 header{
     display: flex;
@@ -33,19 +36,48 @@ input[type=radio]{
     display: none;
 }
 
+input[type=text]{
+    margin-bottom: 25px;
+}
+
 label{
     display: flex;
+    font-size: 1.10;
 }
 
-img{
-    margin-top: auto;
+.sonya-blade{
+    transform: scale(1.15);
 }
+
+label img{
+    margin-top: auto;
+    border-radius: 10%;
+} 
 
 input:checked + img{
-    border: 2px solid white;
-    background:  linear-gradient(var(--color4), var(--color1));
+    background: radial-gradient(var(--color4), var(--color1));
+    border: 2px black solid;
+}
+
+label img:hover{
+    transform: scale(1.15);
+    cursor: pointer;
 }
 
 button{
     margin-top: 10px;
+}
+
+p{
+    font-size: 2rem;
+}
+
+p, label{
+    font-weight: bold;
+}
+
+.main-section{
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
 }
