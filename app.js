@@ -9,7 +9,7 @@ elForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
     const form = new FormData(elForm);
-    
+
     const newUserObj = createUserObj(form);
 
     setLocalStorage(newUserObj);
