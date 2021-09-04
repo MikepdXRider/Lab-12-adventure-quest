@@ -32,13 +32,14 @@ body {
 
 
 #enemies {
- 
+ display: flex;
 }
 
 
 span, button {
     background: transparent;
-    border: none;
+    border: 1px solid black;
+    font-size:larger;
 }
 
 header {

@@ -1,4 +1,4 @@
-
+import { fightData } from '../fightsData.js';
 
 export function renderQuestLink(enemy) {
     const link = document.createElement('button');
@@ -37,8 +37,24 @@ export function renderUserStats(userStats) {
     classDiv.textContent = `Class: ${userStats.class}`;
     hpDiv.textContent = `Hp: ${userStats.hp}`;
     fameDiv.textContent = `Fame: ${userStats.hp}`;
-    encounteredDiv.textContent = `Encountered: ${userStats.encounteredEnemyIds}`;
+    const enemyName = findNameById(fightData, userStats);
+    console.log(enemyName);
+    const enemyNameArr = [];
+    enemyNameArr.push(enemyName);
+    encounteredDiv.textContent = `Encountered: ${enemyNameArr}`;
 
     containerDiv.append(nameDiv, classDiv, hpDiv, fameDiv, encounteredDiv);
     return containerDiv;
+}
+
+
+export function findNameById(fightData, userStats) {
+    for (let enemy of fightData) {
+        for (let id of userStats.encounteredEnemyIds) {
+            if (id === enemy.id) {
+                return enemy.enemyName;
+            }
+        }
+         
+    }
 }
