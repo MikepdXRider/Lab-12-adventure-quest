@@ -49,14 +49,19 @@ label{
     transform: scale(1.15);
 }
 
+.sonya-blade:hover{
+    transform: scale(1.25);
+}
+
 label img{
     margin-top: auto;
     border-radius: 10%;
 } 
 
 input:checked + img{
-    background: radial-gradient(var(--color4), var(--color1));
-    border: 2px black solid;
+    /* background: radial-gradient(var(--color4), var(--color1)); */
+    background-color: rgba(255, 255, 255, 0.287);
+    border: 1px rgb(255, 103, 2) solid;
 }
 
 label img:hover{
