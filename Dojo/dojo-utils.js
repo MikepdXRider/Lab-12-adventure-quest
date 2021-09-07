@@ -1,6 +1,6 @@
 import { fightData } from '../fightsData.js';
 
-// const enemyNameArr = [];
+
 export function renderQuestLink(enemy) {
     const link = document.createElement('button');
     link.classList.add = ('questbutton');
@@ -15,10 +15,11 @@ export function renderQuestLink(enemy) {
 }
 
 export function renderCompletedQuest(enemy) {
+    //remove link and change to span after quest completed 
     const spanEl = document.createElement('span');
     spanEl.classList.add = ('quest');
     spanEl.textContent = `${enemy.enemyName} quest completed.`;
-    
+    //keep image 
     const image = document.createElement('img');
     image.src = enemy.image;
     spanEl.append(image);
@@ -26,6 +27,7 @@ export function renderCompletedQuest(enemy) {
 }
 
 export function renderUserStats(userStats) {
+    //create userstats divs when function is called
     const containerDiv = document.createElement('div');
     containerDiv.className = 'stats-div';
     const nameDiv = document.createElement('div');
@@ -33,16 +35,14 @@ export function renderUserStats(userStats) {
     const hpDiv = document.createElement('div');
     const fameDiv = document.createElement('div');
     const encounteredDiv = document.createElement('div');
-
-    nameDiv.textContent = `Name: ${userStats.name}`;
-    classDiv.textContent = `Class: ${userStats.class}`;
-    hpDiv.textContent = `Hp: ${userStats.hp}`;
-    fameDiv.textContent = `Fame: ${userStats.hp}`;
-    //const enemyName = findNameById(fightData, userStats);
-    //enemyNameArr.push(enemyName);
+    //add textcontent stats to rendered divs
+    nameDiv.textContent = `Name:  ${userStats.name}`;
+    classDiv.textContent = `Class:  ${userStats.class}`;
+    hpDiv.textContent = `Hp:  ${userStats.hp}`;
+    fameDiv.textContent = `Fame:  ${userStats.hp}`;
     const encounteredArr = encounteredByName(fightData, userStats);
-    encounteredDiv.textContent = `Encountered: ${encounteredArr}`;
-
+    encounteredDiv.textContent = `Encountered:  ${encounteredArr}`;
+    //append userstats to container
     containerDiv.append(nameDiv, classDiv, hpDiv, fameDiv, encounteredDiv);
     return containerDiv;
 }
@@ -58,8 +58,7 @@ export function encounteredByName(fightData, userStats) {
         }
          
     }
-    console.log(encounteredArray);
+    
     return encounteredArray;
 }
 
-//

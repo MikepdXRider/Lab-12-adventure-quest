@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap');
 
-body {
+html, body {
  
 
         /* https://coolors.co/generate and click export -> scss to get the colors to copy and paste below*/
@@ -25,6 +25,8 @@ body {
         background-color: var(--color2);
         color: var(--color6);
         font-family: 'Teko', sans-serif;
+        height: 100%;
+        
 }
 
 body {
@@ -34,13 +36,23 @@ body {
 
 #enemies {
  display: flex;
+ justify-content: space-evenly;
 }
 
 
-span, button {
+span {
     background: transparent;
     border: 1px solid black;
     font-size:larger;
+}
+
+button {
+    background: transparent;
+    border: 1px solid black;
+    font-size: 35px;
+    color: orangered;
+    font-weight: bolder;
+    font-family: 'Titillium Web', sans-serif;
 }
 
 header {
