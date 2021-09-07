@@ -55,13 +55,9 @@ header {
 }
 
 #userprofile {
-    display:flex;
-    flex-direction: row;
-    justify-content:flex-end;
-    text-align:right;
-    background: -webkit-linear-gradient(var(--color4), var(--color1));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
    
 }
 
@@ -71,6 +67,15 @@ header img {
     
 }
 .stats-div {
- padding-right: 5px;   
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    background: -webkit-linear-gradient(var(--color4), var(--color1));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;  
+}
+
+.stats-div > div {
+    margin: 5px;
 }
 
