@@ -39,7 +39,6 @@ export function renderUserStats(userStats) {
     hpDiv.textContent = `Hp: ${userStats.hp}`;
     fameDiv.textContent = `Fame: ${userStats.hp}`;
     const enemyName = findNameById(fightData, userStats);
-    console.log(enemyName);
     enemyNameArr.push(enemyName);
     
     encounteredDiv.textContent = `Encountered: ${enemyNameArr}`;
@@ -59,3 +58,4 @@ export function findNameById(fightData, userStats) {
          
     }
 }
+
