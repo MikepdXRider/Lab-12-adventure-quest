@@ -19,23 +19,23 @@
     <main>
         <section class="main-section">
             <form id='create-fighter' name='create-fighter'>
+                <p>Create your fighter!</p>
                 <label for="">
                     Name:
-                    <input type="text" name='user-name'>
+                    <input type="text" name='user-name' required>
                 </label>
-                <p>Select your fighter!</p>
                 <div class="user-fighter">
                     <label name='user-fighter'>
-                        <img src="assets/goro.gif" alt="Goro">
                         <input type="radio" value="Goro" name='user-fighter'>
+                        <img src="assets/goro.gif" alt="Goro">
                     </label>
                     <label name='user-fighter'>
-                        <img src="assets/liukang.gif" alt="Liu Kang">
                         <input type="radio" value="Liu Kang" name='user-fighter'>
+                        <img src="assets/liukang.gif" alt="Liu Kang">
                     </label>
                     <label name='user-fighter'>
-                        <img src="assets/sonyablade.gif" alt="Sonya Blade">
                         <input type="radio" value="Sonya Blade" name='user-fighter'>
+                        <img class="sonya-blade" src="assets/sonyablade.gif" alt="Sonya Blade">
                     </label>
                 </div>
                 <button id="select-fighter-button">Enter The Dojo!</button>

@@ -13,6 +13,12 @@ form{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-around;
+    width: 70%;
+}
+
+p{
+    margin: 10px;
 }
 
 header{
@@ -20,8 +26,63 @@ header{
     justify-content: center;
 }
 
-.user-fight{
+.user-fighter{
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+input[type=radio]{
+    display: none;
+}
+
+input[type=text]{
+    margin-bottom: 25px;
+}
+
+label{
+    display: flex;
+    font-size: 1.10;
+}
+
+.sonya-blade{
+    transform: scale(1.15);
+}
+
+.sonya-blade:hover{
+    transform: scale(1.25);
+}
+
+label img{
+    margin-top: auto;
+    border-radius: 10%;
+} 
+
+input:checked + img{
+    /* background: radial-gradient(var(--color4), var(--color1)); */
+    background-color: rgba(255, 255, 255, 0.287);
+    border: 1px rgb(255, 103, 2) solid;
+}
+
+label img:hover{
+    transform: scale(1.15);
+    cursor: pointer;
+}
+
+button{
+    margin-top: 10px;
+}
+
+p{
+    font-size: 2rem;
+}
+
+p, label{
+    font-weight: bold;
+}
+
+.main-section{
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
 }

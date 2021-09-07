@@ -1,6 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap');
 
 body {
-    background-image: linear-gradient(var(--color4), var(--color1));
+ 
 
         /* https://coolors.co/generate and click export -> scss to get the colors to copy and paste below*/
         --color1: rgb(245,54,36);
@@ -23,22 +24,23 @@ body {
         font-family: 'Titillium Web', sans-serif;
         background-color: var(--color2);
         color: var(--color6);
-    
+        font-family: 'Teko', sans-serif;
 }
 
-
+body {
+    background-image: linear-gradient(var(--color4), var(--color1));
+}
 
 
 #enemies {
-    height: 200px;
-    display: flex;   
+ display: flex;
 }
 
 
-span, a {
-    color: red;
-    font-size: 20px;
-    font-weight: 900; 
+span, button {
+    background: transparent;
+    border: 1px solid black;
+    font-size:larger;
 }
 
 header {
@@ -46,23 +48,34 @@ header {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     background-color: var(--color3);
-    height: var(--header-height);
+    height: 120px;
     flex-direction: row;
     justify-content: flex-end;
+    width: 100%;
 }
 
 #userprofile {
-    display:flex;
-    flex-direction: row;
-    justify-content:flex-end;
-    text-align:right;
-    background: -webkit-linear-gradient(var(--color4), var(--color1));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
    
 }
 
 header img {
-    height: var(--header-height);
+    height: 110px;
     margin: 0px auto;
+    
 }
+.stats-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    background: -webkit-linear-gradient(var(--color4), var(--color1));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;  
+}
+
+.stats-div > div {
+    margin: 5px;
+}
+
