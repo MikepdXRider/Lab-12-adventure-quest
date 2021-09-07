@@ -14,7 +14,7 @@ const userProfile = document.getElementById('userprofile');
 userProfile.append(renderUserStats(user));
 
 console.log(user.class);
-userPic.src = findUserFighterImg();
+userPic.src = findUserFighterImg(user);
 
 
 header.prepend(userPic);
