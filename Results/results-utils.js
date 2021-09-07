@@ -24,6 +24,8 @@ export function createResultsString(userData){
     
     const healthStatus = handleHpResults(hp);
     const fameStatus = handleFameResults(fame);
+
+    // If healthy and famous, flawless victory.
     
     if (handleHpResults === 'dead'){
         return `${hpStrings[healthStatus]} ${deadFameStrings[fameStatus]}`;
@@ -68,6 +70,7 @@ export function findUserFighterImg(userData){
 }
 
 // Should convert into a pure function. Perhaps it returns an array of the elements, which can be appendeds in results.js
+// Include user HP and Fame on page.
 export function renderResultsPage(elDOM){
     const userName = document.createElement('h1');
     const elImg = document.createElement('img');
