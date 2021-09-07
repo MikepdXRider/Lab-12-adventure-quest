@@ -77,7 +77,7 @@ export function renderResultsPage(elDOM){
     const resultsText = `${createEncounterResults(userData)} ${createResultsString(userData)}`;
     
     userName.textContent = userData.name;
-    elImg.src = findUserFighterImg();
+    elImg.src = findUserFighterImg(userData);
     elH3.textContent = resultsText;
     elButton.textContent = 'Make a new character';
     

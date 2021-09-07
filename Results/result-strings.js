@@ -1,5 +1,5 @@
 export const aliveFameStrings = {
-    nobody: 'People boo as you exit the dojo.',
+    nobody: 'People boo as you exit the dojo, you will not be invited back.',
     respected: 'You are hailed a great warrior.',
     famous: 'You leave the peoples champion. You can hear your name chanted throughout the region!',
 };
