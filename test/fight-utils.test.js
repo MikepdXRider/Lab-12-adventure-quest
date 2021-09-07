@@ -4,7 +4,7 @@ const test = QUnit.test;
 
 test('determineRPSResult returns WIN when the user plays \'Rock\' against \'Scissors\'.', assert => {
     const expected = WIN;
-    const actual = determineRPSResult('Rock', 'Paper');
+    const actual = determineRPSResult('Rock', 'Scissors');
     assert.equal(actual, expected);
 });
 
