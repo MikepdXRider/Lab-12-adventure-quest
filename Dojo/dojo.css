@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap');
 
 body {
  
@@ -23,7 +24,7 @@ body {
         font-family: 'Titillium Web', sans-serif;
         background-color: var(--color2);
         color: var(--color6);
-    
+        font-family: 'Teko', sans-serif;
 }
 
 body {
@@ -35,13 +36,6 @@ body {
  display: flex;
 }
 
-
-
-span, a {
-    color: red;
-    font-size: 20px;
-    font-weight: 900; 
-}
 
 span, button {
     background: transparent;
