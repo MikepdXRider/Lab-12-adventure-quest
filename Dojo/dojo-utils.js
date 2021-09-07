@@ -38,24 +38,28 @@ export function renderUserStats(userStats) {
     classDiv.textContent = `Class: ${userStats.class}`;
     hpDiv.textContent = `Hp: ${userStats.hp}`;
     fameDiv.textContent = `Fame: ${userStats.hp}`;
-    const enemyName = findNameById(fightData, userStats);
-    enemyNameArr.push(enemyName);
-    
-    encounteredDiv.textContent = `Encountered: ${enemyNameArr}`;
+    //const enemyName = findNameById(fightData, userStats);
+    //enemyNameArr.push(enemyName);
+    const encounteredArr = encounteredByName(fightData, userStats);
+    encounteredDiv.textContent = `Encountered: ${encounteredArr}`;
 
     containerDiv.append(nameDiv, classDiv, hpDiv, fameDiv, encounteredDiv);
     return containerDiv;
 }
 
 
-export function findNameById(fightData, userStats) {
+export function encounteredByName(fightData, userStats) {
+    const encounteredArray = [];
     for (let enemy of fightData) {
         for (let id of userStats.encounteredEnemyIds) {
             if (id === enemy.id) {
-                return enemy.enemyName;
+                encounteredArray.push(enemy.enemyName);
             }
         }
          
     }
+    console.log(encounteredArray);
+    return encounteredArray;
 }
 
+//
