@@ -1,5 +1,6 @@
 import { fightData } from '../fightsData.js';
 
+const enemyNameArr = [];
 export function renderQuestLink(enemy) {
     const link = document.createElement('button');
     link.classList.add = ('questbutton');
@@ -39,8 +40,8 @@ export function renderUserStats(userStats) {
     fameDiv.textContent = `Fame: ${userStats.hp}`;
     const enemyName = findNameById(fightData, userStats);
     console.log(enemyName);
-    const enemyNameArr = [];
     enemyNameArr.push(enemyName);
+    
     encounteredDiv.textContent = `Encountered: ${enemyNameArr}`;
 
     containerDiv.append(nameDiv, classDiv, hpDiv, fameDiv, encounteredDiv);
