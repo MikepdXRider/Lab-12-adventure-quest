@@ -1,6 +1,6 @@
 import { fightData } from '../fightsData.js';
 
-const enemyNameArr = [];
+// const enemyNameArr = [];
 export function renderQuestLink(enemy) {
     const link = document.createElement('button');
     link.classList.add = ('questbutton');
