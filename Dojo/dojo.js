@@ -13,8 +13,14 @@ const enemiesDiv = document.getElementById('enemies');
 const userProfile = document.getElementById('userprofile');
 userProfile.append(renderUserStats(user));
 
+console.log(user.class);
 userPic.src = findUserFighterImg();
+
+
 header.prepend(userPic);
+if (user.hp < 1 || user.encounteredEnemyIds.length === 3) {
+    window.location = '../Results/index.html';
+}
 
 for (let enemy of fightData) { //eslint-disable-line
     if (user.encounteredEnemyIds.includes(enemy.id)) {
