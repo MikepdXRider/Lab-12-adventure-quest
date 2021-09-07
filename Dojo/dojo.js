@@ -1,7 +1,7 @@
 
 import { fightData } from '../fightsData.js';
 import { getLocalStorage, setLocalStorage } from '../loc-stor-utils.js';
-import { userFighterData } from '../Results/user-fighters-data.js';
+// import { userFighterData } from '../Results/user-fighters-data.js';
 import { renderCompletedQuest, renderQuestLink, renderUserStats } from './dojo-utils.js';
 import { findUserFighterImg } from '../Results/results-utils.js';
 
@@ -14,7 +14,7 @@ const userProfile = document.getElementById('userprofile');
 userProfile.append(renderUserStats(user));
 
 console.log(user.class);
-userPic.src = findUserFighterImg();
+userPic.src = findUserFighterImg(user);
 
 
 header.prepend(userPic);
