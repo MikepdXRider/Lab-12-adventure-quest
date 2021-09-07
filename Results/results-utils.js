@@ -1,9 +1,6 @@
-import { getLocalStorage } from '../loc-stor-utils.js';
 import { fightData } from '../fightsData.js';
 import { userFighterData } from './user-fighters-data.js';
 import { deadFameStrings, aliveFameStrings, hpStrings } from './result-strings.js';
-
-const userData = getLocalStorage();
 
 
 export function handleHpResults(hp){
@@ -12,11 +9,13 @@ export function handleHpResults(hp){
     return 'frail';
 }
 
+
 export function handleFameResults(fame){
     if (fame <= 10) return 'nobody';
     if (fame > 20) return 'famous';
     return 'respected';
 }
+
 
 export function createResultsString(userData){
     const hp = userData.hp;
@@ -24,18 +23,20 @@ export function createResultsString(userData){
     
     const healthStatus = handleHpResults(hp);
     const fameStatus = handleFameResults(fame);
-
-    // If healthy and famous, flawless victory.
     
     if (handleHpResults === 'dead'){
         return `${hpStrings[healthStatus]} ${deadFameStrings[fameStatus]}`;
+    }
+
+    if (healthStatus === 'healthy' && fameStatus === 'famous'){
+        return `FLAWLESS VICTORY!! ${hpStrings[healthStatus]} ${aliveFameStrings[fameStatus]}`;
     }
     
     return `${hpStrings[healthStatus]} ${aliveFameStrings[fameStatus]}`;
 }
 
 
-export function createEncounterResults(userData){
+export function createEncounterString(userData){
     
     const encounters = userData.encounteredEnemyIds;
     
@@ -69,25 +70,34 @@ export function findUserFighterImg(userData){
     return userFighter.img;
 }
 
-// Should convert into a pure function. Perhaps it returns an array of the elements, which can be appendeds in results.js
-// Include user HP and Fame on page.
-export function renderResultsPage(elDOM){
+
+export function renderResultsPage(userData){
     const userName = document.createElement('h1');
     const elImg = document.createElement('img');
+    const elDivCont = document.createElement('div');
+    const elHealthP = document.createElement('p');
+    const elFameP = document.createElement('p');
     const elH3 = document.createElement('h3');
     const elButton = document.createElement('button');
     
-    const resultsText = `${createEncounterResults(userData)} ${createResultsString(userData)}`;
+    const resultsText = `${createEncounterString(userData)} ${createResultsString(userData)}`;
+
     
     userName.textContent = userData.name;
     elImg.src = findUserFighterImg(userData);
+    elHealthP.textContent = `Health: ${userData.hp}`;
+    elFameP.textContent = `Fame: ${userData.fame}`;
     elH3.textContent = resultsText;
     elButton.textContent = 'Make a new character';
+
+    elDivCont.classList.add('flex');
     
     elButton.addEventListener('click', () => {
         window.location = '../index.html';
     });
-    
-    elDOM.append(userName, elImg, elH3, elButton);
+
+    elDivCont.append(elHealthP, elFameP);
+
+    return [userName, elImg, elDivCont, elH3, elButton];
 }
 
