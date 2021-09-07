@@ -3,28 +3,28 @@ export const fightData = [
         id: 1,
         image: '../assets/raiden.gif',
         enemyName: 'Raiden',
-        prompt: 'Bob says your shirt makes you look fat. How do you respond?',
+        prompt: 'What is the airspeed velocity of an unladen swallow?',
         options: [
             {
-                text: 'Yeah well your shirt makes you look fat too.',
+                text: 'Ignore Raiden',
                 hpEffect: 5,
                 fameEffect: 5,
                 startsFight: true,
-                resultText: 'NA, this will be the result from rock paper scissors instead'
+                resultText: 'When a god speaks, heed him. '
             },
             {
-                text: 'Ah man, yeah I\'ve been gaining some weight lately.',
+                text: '17.3 MPH',
                 hpEffect: -1,
                 fameEffect: -5,
                 startsFight: false,
-                resultText: 'Bob laughs at you and smacks your belly, you lose 5 fame'
+                resultText: 'You fool, didn\'t you watch Monty Python! (Raiden smacks you!)'
             },
             {
-                text: 'Uhh, okay.',
-                hpEffect: 0,
-                fameEffect: 0,
+                text: '20.1 MPH',
+                hpEffect: 1,
+                fameEffect: 40,
                 startsFight: false,
-                resultText: 'Bob is confused by your neutrality and goes back to being annoying in general'
+                resultText: 'I sense great power within you. I was wrong to doubt you. (Raiden patts you on the back!)'
             }
         ]
     },
@@ -32,28 +32,28 @@ export const fightData = [
         id: 2,
         image: '../assets/sub-zero.gif',
         enemyName: 'Sub Zero',
-        prompt: 'Bob says your shirt makes you look fat. How do you respond?',
+        prompt: 'Sub Zero shoots an Ice Blast at you!',
         options: [
             {
-                text: 'Yeah well your shirt makes you look fat too.',
+                text: 'Dodge the Ice Blast and punch Sub Zero in the face.',
                 hpEffect: 5,
                 fameEffect: 5,
                 startsFight: true,
-                resultText: 'NA, this will be the result from rock paper scissors instead'
+                resultText: 'I\'m stronger than you realize. You\'re not worthy of a real fight. I challenge you to Rock Paper Scissors... of DEATH!'
             },
             {
-                text: 'Ah man, yeah I\'ve been gaining some weight lately.',
+                text: 'Block the Ice Blast with you hand and laugh.',
                 hpEffect: 0,
                 fameEffect: 10,
                 startsFight: false,
-                resultText: 'Bob laughs at you and smacks your belly, you lose 5 fame'
+                resultText: 'Impressive...'
             },
             {
-                text: 'Uhh, okay.',
+                text: 'Turn and run away.',
                 hpEffect: 0,
                 fameEffect: 0,
                 startsFight: false,
-                resultText: 'Bob is confused by your neutrality and goes back to being annoying in general'
+                resultText: 'I\'m Sub Zero, not Captain Cold.'
             }
         ]
     },
@@ -61,28 +61,28 @@ export const fightData = [
         id: 3,
         image: '../assets/johnny-cage.gif',
         enemyName: 'Johnny Cage',
-        prompt: 'Bob says your shirt makes you look fat. How do you respond?',
+        prompt: 'You approach Johnny Cage...',
         options: [
             {
-                text: 'Yeah well your shirt makes you look fat too.',
+                text: 'Punch Johnny Cage in the face.',
                 hpEffect: 5,
                 fameEffect: 5,
                 startsFight: true,
-                resultText: 'NA, this will be the result from rock paper scissors instead'
+                resultText: 'Those were $500 sunglasses, fudge nuggets! Prepare to die! (Johnny Cage challenges you to Rock Paper Scissors... of DEATH!)'
             },
             {
-                text: 'Ah man, yeah I\'ve been gaining some weight lately.',
+                text: 'Help Johnny Cage with his sunglasses.',
                 hpEffect: 0,
                 fameEffect: 10,
                 startsFight: false,
-                resultText: 'Bob laughs at you and smacks your belly, you lose 5 fame'
+                resultText: 'Those were $500 sunglasses, thanks!'
             },
             {
-                text: 'Uhh, okay.',
+                text: 'You notice some sunglasses on the ground. Grab them and run.',
                 hpEffect: 0,
                 fameEffect: 0,
-                startsFight: false,
-                resultText: 'Bob is confused by your neutrality and goes back to being annoying in general'
+                startsFight: true,
+                resultText: 'Those were my $500 sunglasses, fudge nuggets! Prepare to die! (Johnny Cage challenges you to Rock Paper Scissors... of DEATH!)'
             }
         ]
     },
