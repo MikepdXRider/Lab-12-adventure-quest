@@ -20,10 +20,10 @@ export function setLocalStorage(obj){
 
 
 // 
-export function createUserObj(form){
+export function createUserObj(userName, userClass){
     const userDataObj = {
-        name: form.get('user-name'),
-        class: form.get('user-fighter'),
+        name: userName,
+        class: userClass,
         hp: 10,
         fame: 10,
         encounteredEnemyIds:[]

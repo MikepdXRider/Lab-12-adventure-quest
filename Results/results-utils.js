@@ -24,7 +24,7 @@ export function createResultsString(userData){
     const healthStatus = handleHpResults(hp);
     const fameStatus = handleFameResults(fame);
     
-    if (handleHpResults === 'dead'){
+    if (healthStatus === 'dead'){
         return `${hpStrings[healthStatus]} ${deadFameStrings[fameStatus]}`;
     }
 
@@ -97,7 +97,8 @@ export function renderResultsPage(userData){
     });
 
     elDivCont.append(elHealthP, elFameP);
-
+    
+    // console.log([userName, elImg, elDivCont, elH3, elButton]);
     return [userName, elImg, elDivCont, elH3, elButton];
 }
 
