@@ -40,3 +40,7 @@ time, mark, audio, video {
 ol, ul {
 	list-style: none;
 }
+
+button:hover{
+    cursor: pointer;
+}
