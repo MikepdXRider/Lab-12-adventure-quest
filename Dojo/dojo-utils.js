@@ -6,6 +6,7 @@ export function renderQuestLink(enemy) {
     link.classList.add = ('questbutton');
     link.href = '../Fight/?id=' + enemy.id; 
     link.textContent = `Enter the ${enemy.enemyName} quest!`;
+    
 
     
     const image = document.createElement('img');
