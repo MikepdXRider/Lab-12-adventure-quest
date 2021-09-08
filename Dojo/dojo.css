@@ -26,6 +26,7 @@ html, body {
         color: var(--color6);
         font-family: 'Teko', sans-serif;
         height: 100%;
+        min-height: 100vh;
         
 }
 
