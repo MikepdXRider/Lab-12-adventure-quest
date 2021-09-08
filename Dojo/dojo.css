@@ -32,11 +32,24 @@ html, body {
 body {
     background-image: linear-gradient(var(--color4), var(--color1));
 }
+main{
+    min-height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+#enemybackground {
+    background-image: url('../assets/dojo3.jpeg');
+    height: 80%;
+    width: 80%;
+    align-items: space-between;
 
+}
 #enemies {
  display: flex;
- justify-content: space-evenly;
+ justify-content: space-around;
+ 
 }
 
 
@@ -50,7 +63,7 @@ button {
     background: transparent;
     border: 1px solid black;
     font-size: 35px;
-    color: orangered;
+    color: black;
     font-weight: bolder;
     font-family: 'Titillium Web', sans-serif;
 }
@@ -89,5 +102,9 @@ header img {
 
 .stats-div > div {
     margin: 5px;
+}
+
+footer {
+    height: 30px;
 }
 
