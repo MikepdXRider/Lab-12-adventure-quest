@@ -1,12 +1,12 @@
 import { renderUserStats } from '../Dojo/dojo-utils.js';
 import { fightData } from '../fightsData.js';
 import { getLocalStorage } from '../loc-stor-utils.js';
-import { handleStatEffect } from './handle-stat-effect.js';
+import { determineRPSResult, getRandomRPSPlay, getStringForRPSResult, updateRPSGameData, handleStatEffect } from './fight-utils.js';
 
 //Get the fight data
 const searchParams = new URLSearchParams(window.location.search);
 const stringyId = searchParams.get('id');
-if (typeof stringyId === 'undefined') {
+if (stringyId === null) {
     alert('Something went wrong, please go back to the dojo page');
 }
 const fightId = Number(searchParams.get('id'));
@@ -70,62 +70,50 @@ function handleFightCompletion(resultText, hpEffect, fameEffect) {
 //display stats before fight
 updateUserStatsDisplay();
 
+//**STATE DATA**
 //Rock Paper Scissors data
-const rps = ['Rock', 'Paper', 'Scissors'];
-let wins = 0;
-let losses = 0;
-let selectedResponse; //the response the user selected.
-
-function determineRPSResult(userPlay, enemyPlay) {
-    let result = '';
-    if (userPlay === enemyPlay) {
-        result = 'It was a draw';
-    } else if (
-        (userPlay === 'Rock' && enemyPlay === 'Scissors') ||
-        (userPlay === 'Paper' && enemyPlay === 'Rock') ||
-        (userPlay === 'Scissors' && enemyPlay === 'Paper')
-    ) {
-        result = 'You won this round';
-        wins++;
-    } else {
-        result = 'You lost this round';
-        losses++;
-    }
-    return result;
-} 
+let rpsGameData = {
+    wins: 0,
+    losses: 0
+};
+//the response to the fighter that the user selected.
+let selectedResponse;
+//**END STATE DATA**
 
 //This function calls itself recursively. It will stop
 //when wins or losses reaches 3
-const playRockPaperScissorsRound = (selectedObject) => {
+function playRockPaperScissorsRound(selectedObject) {
     //Randomly assign picks to user and enemy
     const userPlay = selectedObject;
-    const enemyPlay = rps[(Math.floor(Math.random() * 3))];
+    const enemyPlay = getRandomRPSPlay();
 
     //Determine result of round
     const result = determineRPSResult(userPlay, enemyPlay);
+    const resultString = getStringForRPSResult(result);
+    rpsGameData = updateRPSGameData(rpsGameData, result);
 
     //Handle the result of the round
-    if (wins === 3) {
+    if (rpsGameData.wins === 3) {
         //The user won
         const resultText = `You beat ${fight.enemyName}! You gained ${selectedResponse.hpEffect} hp and ${selectedResponse.fameEffect} fame.`;
         handleFightCompletion(resultText, selectedResponse.hpEffect, selectedResponse.fameEffect);
-    } else if (losses === 3) {
+    } else if (rpsGameData.losses === 3) {
         //The enemy won
         const resultText = `You lost to ${fight.enemyName}! You lost ${selectedResponse.hpEffect} hp and ${selectedResponse.fameEffect} fame.`;
         handleFightCompletion(resultText, selectedResponse.hpEffect, selectedResponse.fameEffect);
     } else {
-        //No result yet, play another round
-        resultsDiv.textContent = `You played ${userPlay} and ${fight.enemyName} played ${enemyPlay}. ${result}. Wins: ${wins}, Losses: ${losses}`;
+        //The game isn't done, play another round
+        resultsDiv.textContent = `You played ${userPlay} and ${fight.enemyName} played ${enemyPlay}. ${resultString}. Wins: ${rpsGameData.wins}, Losses: ${rpsGameData.losses}`;
     }
-};
-
-//Starts a game of rock paper scissors
-function startRockPaperScissors() {
-    resultsDiv.textContent = `${fight.enemyName} challenges you to a game of rock, paper, scissors ... of death. Choose your move carefully:`;
-    rpsDiv.className = ''; //remove the hidden class
 }
 
-//Handle the user selecting an option
+//Starts a game of rock paper scissors
+function startRockPaperScissors(selectedResponse) {
+    resultsDiv.textContent = selectedResponse.resultText;
+    rpsDiv.className = ''; //show the game by removing the hidden class.
+}
+
+//Handle the user selecting a response to the fighter
 optionsForm.addEventListener('submit', e => {
     e.preventDefault();
 
@@ -136,11 +124,12 @@ optionsForm.addEventListener('submit', e => {
 
     //Update the page to show the results of the response.
     optionsDiv.className = 'hidden';
-    resultsDiv.textContent = fight.options[selectedOptionIndex].resultText;
+    let resultText = fight.options[selectedOptionIndex].resultText;
+    resultsDiv.textContent = resultText;
     if (selectedResponse.startsFight) {
         startRockPaperScissors(selectedResponse);
     } else {
-        const resultText = `Effect on hp: ${selectedResponse.hpEffect}, Effect on fame: ${selectedResponse.fameEffect}`;
+        resultText = resultText + ` Effect on hp: ${selectedResponse.hpEffect}, effect on fame: ${selectedResponse.fameEffect}`;
         handleFightCompletion(resultText, selectedResponse.hpEffect, selectedResponse.fameEffect);
     }
 });

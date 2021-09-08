@@ -1,3 +1,12 @@
+html {
+    background-image: linear-gradient(var(--color4), var(--color1));
+}
+
+body {
+    background-color: rgba(0, 0, 0, 0);
+    min-height: 100vh;
+}
+
 #fight-div {
     display: flex;
     flex-direction: column;
