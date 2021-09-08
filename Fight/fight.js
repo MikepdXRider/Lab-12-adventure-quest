@@ -108,8 +108,8 @@ function playRockPaperScissorsRound(selectedObject) {
 }
 
 //Starts a game of rock paper scissors
-function startRockPaperScissors() {
-    resultsDiv.textContent = `${fight.enemyName} challenges you to a game of rock, paper, scissors. Choose your move carefully:`;
+function startRockPaperScissors(selectedResponse) {
+    resultsDiv.textContent = selectedResponse.resultText;
     rpsDiv.className = ''; //show the game by removing the hidden class.
 }
 
